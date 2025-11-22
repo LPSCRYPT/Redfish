@@ -72,6 +72,9 @@ def save_cleaned_dataset(df: pd.DataFrame, output_path: Path):
 def main():
     df = load_dataset(Path(DATA_PATH))
     df = clean_dataset(df)
+        #print dataset info
+    print("Cleaned DataFrame Info:")
+    print(df.info())
     save_cleaned_dataset(df, Path(CLEAN_DATA_PATH))
 
 

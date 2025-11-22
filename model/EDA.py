@@ -6,8 +6,8 @@ import seaborn as sns
 import numpy as np
 import os
 
-DATA_PATH = 'data/transaction_dataset.csv'
-# DATA_PATH = 'data/data.csv'
+#DATA_PATH = 'data/transaction_dataset.csv'
+DATA_PATH = 'data/data.csv'
 
 def print_info(df):
     print("DataFrame Info:")
