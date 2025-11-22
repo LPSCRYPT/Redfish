@@ -7,6 +7,7 @@ import numpy as np
 import os
 
 DATA_PATH = 'data/transaction_dataset.csv'
+# DATA_PATH = 'data/data.csv'
 
 def print_info(df):
     print("DataFrame Info:")
@@ -38,8 +39,15 @@ def inspect_flag_distribution(df, flag_column):
 
 def correlation_heatmap(df, annotation=False):
     # Correlation matrix
-    numericals = df.select_dtypes(include=['float','int']).columns
-    corr = df[numericals].corr()
+    cleaned = df.iloc[:, 2:].copy()
+    categorical_cols = cleaned.select_dtypes(include=['object']).columns
+    if len(categorical_cols) > 0:
+        print(f"Dropping {len(categorical_cols)} categorical columns")
+        cleaned.drop(columns=categorical_cols, inplace=True)
+
+    cleaned.fillna(cleaned.median(numeric_only=True), inplace=True)
+
+    corr = cleaned.corr()    
 
     mask = np.zeros_like(corr)
     mask[np.triu_indices_from(mask)]=True
