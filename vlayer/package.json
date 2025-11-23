@@ -1,0 +1,21 @@
+{
+  "name": "redfish-vlayer-integration",
+  "version": "1.0.0",
+  "description": "vlayer Web Proofs integration for Redfish ZKML fraud detection",
+  "type": "module",
+  "scripts": {
+    "prove": "tsx scripts/prove_wallet_reputation.ts",
+    "deploy:verifier": "forge create vlayer/contracts/WalletReputationVerifier.sol:WalletReputationVerifier",
+    "submit:proof": "tsx scripts/submit_proof.ts"
+  },
+  "dependencies": {
+    "@vlayer/sdk": "^1.5.1",
+    "viem": "^2.27.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
