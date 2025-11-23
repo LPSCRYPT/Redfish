@@ -22,6 +22,9 @@ settings.json
 pk.key
 vk.key
 
+# data files
+model/data/
+
 # Editors
 .vscode/
 .idea/

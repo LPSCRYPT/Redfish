@@ -1,4 +1,7 @@
 ezkl
-torch
+torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
 numpy
 onnx
+pandas
+matplotlib
+seaborn
