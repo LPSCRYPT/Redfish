@@ -11,14 +11,6 @@ cache/
 broadcast/
 dist/
 
-# EZKL Artifacts
-*.ezkl
-*.key
-*.srs
-*.pf
-*.proof
-witness.json
-settings.json
 pk.key
 vk.key
 
@@ -29,3 +21,8 @@ model/data/
 .vscode/
 .idea/
 .DS_Store
+
+# EZKL Artifacts
+ezkl/build/pk.key
+*.pk
+
